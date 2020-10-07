@@ -30,9 +30,11 @@ namespace dotnet_rpg
             services.AddScoped<ICharacterService, CharacterService>();
             // services.AddTransient
             // services.AddSingleton
-            // AddTransient瞬时模式：每次请求，都获取一个新的实例。即使同一个请求获取多次也会是不同的实例
-            // AddScoped：每次请求，都获取一个新的实例。同一个请求获取多次会得到相同的实例
-            // AddSingleton单例模式：每次都获取同一个实例
+            // AddTransient暫態模式：每次請求，都獲取一個新的實例。即使同一個請求獲取多次也會是不同的實例
+            // AddScoped：每次請求，都獲取一個新的實例。同一個請求獲取多次會得到相同的實例
+            // AddSingleton單例模式：每次都獲取同一個實例
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,11 +10,11 @@ namespace dotnet_rpg.Services.CharacterService
             new Character(),
             new Character {Id = 1, Name = "Sam"}
         };
-                 
+
         public List<Character> AddCharacter(Character newCharacter)
         {
             characters.Add(newCharacter);
-            return characters; 
+            return characters;
         }
 
         public List<Character> GetAllCharacters()

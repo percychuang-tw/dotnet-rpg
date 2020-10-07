@@ -1,21 +1,21 @@
+using System.Collections.Generic;
+using System.Linq;
 using dotnet_rpg.Models;
 using dotnet_rpg.Services.CharacterService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_rpg.Controllers
 {
-
     [ApiController]
     [Route("[controller]")]
     public class CharacterController : ControllerBase
     {
         private readonly ICharacterService _characterService;
 
-        public CharacterController(ICharacterService characterService)
+        public CharacterController(ICharacterService CharacterService)
         {
-            _characterService = characterService;
+            _characterService = CharacterService;
         }
-
 
         [HttpGet("GetAll")]
         public IActionResult Get()
@@ -34,7 +34,6 @@ namespace dotnet_rpg.Controllers
         {
             return Ok(_characterService.AddCharacter(newCharacter));
         }
-
     }
 
 }
