@@ -4,6 +4,7 @@
     <RootNamespace>dotnet_rpg</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3"/>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInJection" Version="8.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 </Project>
