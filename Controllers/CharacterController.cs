@@ -34,6 +34,18 @@ namespace dotnet_rpg.Controllers
         {
             return Ok(await _characterService.AddCharacter(newCharacter));
         }
+
+        // 新增一個API，共需要修改1.InterfaceService、2.InterfaceService及3.Controller共三個檔案；及增加Dto檔
+        [HttpPut]
+        public async Task<IActionResult> UpdateCharacter(UpdateCharacterDto updateCharacter)
+        {
+            ServiceResponse<GetCharacterDto> response = await _characterService.UpdateCharacter(updateCharacter);
+            if (response.Data == null)
+                return NotFound(response);
+            else
+                return Ok(response);
+        }
+
     }
 
 }
