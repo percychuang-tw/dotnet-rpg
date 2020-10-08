@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using dotnet_rpg.Dtos.Character;
 using dotnet_rpg.Models;
@@ -40,6 +41,16 @@ namespace dotnet_rpg.Controllers
         public async Task<IActionResult> UpdateCharacter(UpdateCharacterDto updateCharacter)
         {
             ServiceResponse<GetCharacterDto> response = await _characterService.UpdateCharacter(updateCharacter);
+            if (response.Data == null)
+                return NotFound(response);
+            else
+                return Ok(response);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            ServiceResponse<List<GetCharacterDto>> response = await _characterService.DeleteCharacter(id);
             if (response.Data == null)
                 return NotFound(response);
             else
